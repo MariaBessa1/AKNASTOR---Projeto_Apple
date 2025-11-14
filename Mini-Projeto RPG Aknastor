@@ -1,0 +1,304 @@
+
+
+import Foundation
+
+//-------------------------------------FUNÇÕES------------------------------------------//
+
+func esperaEnter () {
+    _ = readLine ()
+}
+
+func escolhaMundo() -> String {
+    let escolhaM = readLine()
+    
+    switch escolhaM {
+    case "1":
+        return"""
+             ======================== °❀⋆.ೃ࿔*:･🍀 Vocês escolheram Elfer 🍀 :･°❀⋆.ೃ࿔*:･=========================
+              Elfer é um reino coberto de magia e esperança. A maioria das criaturas místicas habitantes 
+             em Aknastor vivem aqui atualmente,que, agora, também inclui vocês. As vegetações crescem de 
+             forma bela e imponente, inatural, e seus galhos se contorcem em diversas espirais que se entrelaçam 
+             até que seja impossível identificar de qual árvore cada um pertence. É o reino responsável por prover 
+             80% dos mantimentos de todo Aknastor, com suas diversas plantações mantidas através de uma magia tão 
+             antiga que transcende o tempo geológico. Elfer, entretanto, está passando por um processo de superpopulação,
+             fazendo seu ecossistema entrar em colapso e várias criaturas perderem seus lares. 
+              ==========================================༺𓆩༒︎𓆪༻=================================================
+             """
+    case "2":
+        return"""
+              ====================== ⊹ . ݁ ⟡ ݁ ⊹ ₊ ݁.🔥 Vocês escolheram Ignis 🔥 . ݁₊ ⊹ . ݁  ݁ . ⊹₊ ݁.=====================
+                Ignis é um dos reinos mais importantes de Aknastor. Sua ambientação, antes considerada a mais bela de 
+             todo o mundo por ser marcada pela presença de diversas vegetações cristalizadas que refletiam os raios 
+             solares em grandes arco-iris no solo, agora não demonstra nada mais do que tristeza e desespero.
+                É o reino responsável por prover o calor e o fogo a todo Aknastor, tendo a intensidade de seu impacto 
+             originalmente controlada pelas fadas e os diversos cristais mágicos presentes. Entretanto, nos ultimos 
+             séculos, Ignis vem passando por uma extensa exploração, resultando na perca quase total de seu ecossistema. 
+             Atualmente, é habitado somente por aqueles que não possuem condições necessárias para migrarem para Elfer e que 
+             tentam, desesperadamente, manter o mundo estável e o mais distante possível de um eminente desastre climático
+             =============================================༺𓆩༒︎𓆪༻=================================================
+             """
+        
+    case "3":
+        return"""
+             ======================꒷꒦꒷꒦꒷꒦꒷꒦꒷꒦꒷꒦ 🧊 Vocês escolheram Hibernium 🧊 ꒷꒦꒷꒦꒷꒦꒷꒦꒷꒦꒷꒦========================
+                Dizem as lendas que Hibernium foi o primeiro reino a surgir em Aknastor. Em um período onde a única vista
+             possível ao se encarar o horizonte era um vasto oceano, Hibernium já comecava a despertar com suas magias. 
+                Popularmente, o reino é conhecido por controlar o clima frio de Aknastor, encontrando o equilíbrio perfeito com
+             Ignis. Sua paisagem é formada por imponentes cristais de gelo e árvores repletas de uma neve mágica que nunca derrete, 
+             a menos que seja confrontada por uma igualmente poderosa. Infelizmente, esta é a realidade dos ultimos séculos. Ignis,
+             sem seu costumeiro controle, passou a derreter Hibernium lentamente, fazendo com que muitas criaturas perdessem seus
+             lares e fossem buscar refúgio em Elfer. As poucas que restaram, em sua maioria as fadas da neve, sobrevivem em agonia
+             diária em busca de restaurar o que a muito tempo foi perdido. 
+             =============================================༺𓆩༒︎𓆪༻=================================================
+             """
+        
+        
+    case "4":
+        return"""
+             
+             ================⊱•═•⊰❉⊱•═•⊰❉⊱•═•⊰❉ 🌙 Vocês escolheram Hypnos 🌙 ❉⊱•═•⊰❉⊱•═•⊰❉⊱•═•⊰❉===============         
+                Hypnos, também conhecido como "Floresta dos Sussurros", é um dos reinos mais misteriosos de todo Aknastor,
+             possuindo pouquíssimos - quase inexistentes - registros sobre nas bibliotecas acessíveis a população. 
+             Sabe-se, entretanto, que é onde a família real reside, atrás de névoas tão densas que qualquer um que não 
+             pertença a mesma e ouse chegar perto cai em um sono profundo que pode durar milênios. Vocês sentem isso dentro 
+             de vocês, como se fosse um instinto natural de toda população de Aknastor, e decidem parar antes que cheguem ao 
+             divisor das névoas. Anteriormente a ele, Hypnos possui uma paisagem irreal que beira o sublime, com uma formação 
+             física que não se encaixaria em nenhum dos 3 estados da matéria conhecidos, mas que também não é racional o suficiente 
+             para ser estudado, como um sonho. 
+             =============================================༺𓆩༒︎𓆪༻===================================================
+             """
+    default:
+        print("Este não é um número válido, tente novamente:")
+        return escolhaMundo()
+        
+    }
+}
+
+func retornaMundos () -> String {
+    print("""
+                                    Deseja ver outro mundo? 
+                                     (sim)          (nao)
+
+""")
+    let escolherNovoMundo = readLine()
+    if escolherNovoMundo == "sim" {
+        return escolhaMundo()
+    } else {
+        return "Ok, você fez uma boa escolha! ╰┈➤"
+    }
+}
+    
+    func escolhaArma (_ armasDanos: [Int: Int]) -> (arma: String, dadoDano: Int ) {
+        let escolhaA = readLine()
+        if let existeEscolhaA = escolhaA {
+            switch existeEscolhaA {
+            case "1":
+                return("Sua arma escolhida foi Espada. Ela pode dar, de dano máximo, até", armasDanos[1]!)
+            case "2":
+                return("Sua arma escolhida foi Lança. Ela pode dar, de dano máximo, até", armasDanos[2]!)
+            case "3":
+                return("Sua arma escolhida foi Arco e Flecha. Ele pode dar, de dano máximo, até", armasDanos[3]!)
+            case "4":
+                return("Sua arma escolhida foi Machado. Ele pode dar, de dano máximo, até", armasDanos[4]!)
+            default:
+                return("Opção inválida. Você receberá a Espada. Ela pode dar, de dano máximo, até", armasDanos[1]!)
+            }
+        }
+        return("Você não digitou nada. Você receberá a Espada. Ela pode dar, de dano máximo, até", armasDanos[1]!)
+    }
+
+func batalha () -> String {
+    var rodada = 0
+    var dano1 = 0
+    var dano2 = 0
+    var vida1 = 50
+    var vida2 = 50
+    
+    while vida1>0 && vida2>0 {
+        print("""
+
+   ════════════════════════════ RODADA \(rodada) ════════════════════════════
+""")
+        dano1 = Int.random(in: 1...arma1.dadoDano)
+        dano2 = Int.random(in: 1...arma2.dadoDano)
+        
+        if rodada == 0 {
+            print("\(nomeJogador), dê seu primeiro dano!! (ENTER)")
+            esperaEnter()
+            print("\(nomeJogador) causou \(dano1) de dano em \(nomeJogador2)\n")
+            
+            print("\(nomeJogador2) Vai deixar??? CONTRA-ATAQUE!!!!! (ENTER)")
+            esperaEnter()
+            print("\(nomeJogador2) causou \(dano2) de dano em \(nomeJogador)\n")
+        } else if rodada < 6 {
+            print("\(nomeJogador), dê seu dano!! (ENTER)")
+            esperaEnter()
+            print("\(nomeJogador) causou \(dano1) de dano em \(nomeJogador2)\n")
+            
+            print("\(nomeJogador2), dê seu dano!! (ENTER)")
+            esperaEnter()
+            print("\(nomeJogador2) causou \(dano2) de dano em \(nomeJogador)\n")
+        } else {
+            print("Isso tá acirrado... \(nomeJogador), dê seu dano!! (ENTER)")
+            esperaEnter()
+            print("\(nomeJogador) causou \(dano1) de dano em \(nomeJogador2)\n")
+            
+            print("Vai \(nomeJogador2), vamos acabar com isso, dê seu dano!! (ENTER)")
+            esperaEnter()
+            print("\(nomeJogador2) causou \(dano2) de dano em \(nomeJogador)\n")
+        }
+        
+        vida1 -= dano2
+        vida2 -= dano1
+        
+        if vida1 < 0 {
+            vida1 = 0
+        } else if vida2 < 0 {
+            vida2 = 0
+        }
+        
+        print("""
+           STATUS: 
+           \(nomeJogador) = \(vida1) de vida
+           \(nomeJogador2) = \(vida2) de vida
+""")
+        
+        rodada+=1
+    }
+    
+    
+    print("""
+
+════════════════════════════ FIM DO COMBATE!!!═════════════════════════════
+""")
+
+    if vida1==0 && vida2==0 {
+        return "EMPATE! Isso é raro, hein! ENTRETENIMENTO DUPLICADO!!"
+    } else if vida1==0 {
+        return "\(nomeJogador2) VENCEU!! Obrigada \(nomeJogador) por seu sacrifício, ele nunca será esquecido."
+    } else {
+        return "\(nomeJogador) VENCEU!! Obrigada \(nomeJogador2) por seu sacrifício, ele nunca será esquecido."
+    }
+}
+    
+    //--------------------------------------MAIN--------------------------------------------//
+    
+    //DECLARAÇÕES::
+    
+    var vida1 = 50
+    var vida2 = 50
+    
+    var armasDanos = [Int: Int] ()
+    armasDanos[1] = 6
+    armasDanos[2] = 8
+    armasDanos[3] = 4
+    armasDanos[4] = 12
+    
+    //JOGO::
+    
+    print("""
+════════════════════════════👾 Olá, Jogador(a)!! 👾═══════════════════════════
+É um grande prazer te ter aqui conosco em meio a tantos "zeros e uns" recém criados. 
+Seja bem-vindo(a) ao universo de Aknastor, nosso pequeno universo simulado. Estamos 
+trabalhando duro aqui por trás para que sua experiência seja a mais interessante possível ( ˶ˆᗜˆ˵ ) 
+                         (Pressione ENTER para continuar)╰┈➤
+══════════════════════════════════════════════════════════════════════════
+""")
+    
+    esperaEnter()
+    
+    print("""
+Antes de qualquer coisa, informe seu nome (Ou o nome do personagem que quer interpretar aqui, 
+sinta-se a vontade!)\n
+""")
+    let nomeJogador = readLine () ?? "Jogador 1"
+    
+    print("\nMuito obrigada \(nomeJogador), seu nome agora está definido! ╰┈➤")
+    
+    esperaEnter()
+    
+    print("""
+Convide um amigo para poder passar por essa experiência junto com você! 
+Peça para ele também informar o nome: \n
+""")
+    let nomeJogador2 = readLine () ?? "Jogador 2"
+    
+    print("\nOlá \(nomeJogador2), seu nome também está definido! ╰┈➤")
+    
+    esperaEnter()
+    
+    print("""
+Para comecarmos, selecionem em conjunto um dos quatro reinos existentes para que as suas 
+aventuras ocorram, sem brigas!!! 
+(Por favor, digite o NÚMERO correspondente ao reino desejado):
+
+🍀 1 - Elfer
+🔥 2 - Ignis
+🧊 3 - Hibernium
+🌙 4 - Hypnos
+""")
+    
+    let mundoEscolhido = escolhaMundo()
+    print(mundoEscolhido)
+
+    print(retornaMundos())
+    
+    esperaEnter()
+    
+    print("Bom..... ╰┈➤")
+    
+    esperaEnter()
+    
+    print("Talvez eu tenha mentido para vocês sobre a aventura, e principalmente sobre a parte do 'sem brigas'... ╰┈➤")
+    
+    esperaEnter()
+    
+    print("Aknastor está passando por momentos difíceis, meu povo precisa de diversão para que esqueçam e não me culpem, entendem??? 🌙 ╰┈➤")
+    
+    esperaEnter()
+    
+    print("VOCÊS ACABARAM DE SER ESCOLHIDOS PARA 🩸BATALHAREM ATÉ A MORTE🩸 ( ˶°ㅁ°)!!╰┈➤")
+    
+    esperaEnter()
+    
+    print("Ambos possuem 50 pontos de vida iniciais, e tem direito a escolherem as armas que querem utilizar contra seu agora inimigo.╰┈➤")
+    
+    esperaEnter()
+    
+    print("\(nomeJogador), escolha sua arma: ")
+    
+    print("""
+════════════════════════════⚔️ ARMAMENTOS ⚔️═══════════════════════════
+🩸1 - Espada
+🩸2 - Lança
+🩸3 - Arco e Flecha
+🩸4 - Machado
+══════════════════════════════════════════════════════════════════════
+""")
+    
+    let arma1 = escolhaArma(armasDanos)
+    print(arma1.arma, arma1.dadoDano)
+    
+    print("\(nomeJogador2), escolha sua arma: ")
+    
+    print("""
+════════════════════════════⚔️ ARMAMENTOS ⚔️═══════════════════════════
+🩸1 - Espada
+🩸2 - Lança
+🩸3 - Arco e Flecha
+🩸4 - Machado
+══════════════════════════════════════════════════════════════════════
+""")
+    
+    let arma2 = escolhaArma(armasDanos)
+    print(arma2.arma, arma2.dadoDano)
+    
+    
+    //------------------------------------BATALHA------------------------------------------//
+
+   print(batalha())
+    
+
+print("""
+\n══════════════════════ AKNASTOR AGRADECE A SUA VISITA 🌙 ════════════════════════
+""")
