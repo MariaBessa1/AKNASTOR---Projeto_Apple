@@ -82,7 +82,8 @@ func retornaMundos () -> String {
 """)
     let escolherNovoMundo = readLine()
     if escolherNovoMundo == "sim" {
-        return escolhaMundo()
+        print(escolhaMundo())
+        return retornaMundos()
     } else {
         return "Ok, você fez uma boa escolha! ╰┈➤"
     }
